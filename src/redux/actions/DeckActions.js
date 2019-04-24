@@ -29,42 +29,28 @@
 * You will get 10% discount for each one of your friends
 * 
 */
-import { combineReducers } from "redux";
+import actionsFunction from "./generated/DeckActionsGenerated";
 
-// START IMPORT REDUCERS
-import CardEditReducer from "./CardEditReducer";
-import CardListReducer from "./CardListReducer";
-import DeckEditReducer from "./DeckEditReducer";
-import DeckListReducer from "./DeckListReducer";
-import DecksReducer from "./DecksReducer";
-import HomeReducer from "./HomeReducer";
-
-// END IMPORT REDUCERS
-
-
-// CUSTOM REDUCERS
-import LoginReducer from "./LoginReducer";
-import ProfileReducer from "./ProfileReducer";
-import UserEditReducer from "./UserEditReducer";
-import UserListReducer from "./UserListReducer";
-
-const rootReducer = combineReducers({
+// You can customize the base actions overriding the object "actionsFunction" as shown in the example below:
+/** 
+ // EXAMPLE:
+ 
+ import DeckApi from "../../api/DeckApi";
+ 
+ actionsFunction.loadDeckList = function() {
+   return function(dispatch) {
+     console.log("This is my custom function");
+     return DeckApi
+     .getDeckList()
+     .then(list => {
+       dispatch(actionsFunction.loadDeckSuccess(list));
+      })
+      .catch(error => {
+        throw error;
+      });
+    };
+  };
   
-  // INSERT HERE YOUR CUSTOM REDUCERS
-  LoginReducer,
-  ProfileReducer,
-  UserEditReducer,
-  UserListReducer,
+*/
 
-  // START COMBINE REDUCERS
-	CardEditReducer,
-	CardListReducer,
-	DeckEditReducer,
-	DeckListReducer,
-	DecksReducer,
-	HomeReducer,
- // END COMBINE REDUCERS
-
-});
-
-export default rootReducer;
+export default actionsFunction;

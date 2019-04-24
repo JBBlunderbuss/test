@@ -122,7 +122,23 @@ class Navbar extends React.Component {
         <Divider />
         <List>
           {/* START LINK MENU */}
- {/* END LINK MENU */}
+            
+           <Link to="/cards">
+            <ListItem button key="Card">
+              <ListItemIcon>
+                <ArrowForwardIos />
+              </ListItemIcon>
+              <ListItemText className="menu-text" primary="Card" />
+            </ListItem>
+          </Link>{" "}            
+           <Link to="/decks">
+            <ListItem button key="Deck">
+              <ListItemIcon>
+                <ArrowForwardIos />
+              </ListItemIcon>
+              <ListItemText className="menu-text" primary="Deck" />
+            </ListItem>
+          </Link>{" "} {/* END LINK MENU */}
         </List>
       </div>
     );

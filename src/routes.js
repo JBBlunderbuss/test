@@ -40,6 +40,10 @@ import Paper from "@material-ui/core/Paper";
 
 /* START MY VIEWS IMPORT */
 
+import CardEdit from "./pages/CardEdit";
+import CardList from "./pages/CardList";
+import DeckEdit from "./pages/DeckEdit";
+import DeckList from "./pages/DeckList";
 import Decks from "./pages/Decks";
 
 /* END MY VIEWS IMPORT */
@@ -70,6 +74,10 @@ class Routes extends Component {
 
               {/* START MY VIEWS */}
 
+              <PrivateRoute exact path="/cards/:id" component={ CardEdit }  />
+              <PrivateRoute exact path="/cards" component={ CardList }  />
+              <PrivateRoute exact path="/decks/:id" component={ DeckEdit }  />
+              <PrivateRoute exact path="/decks" component={ DeckList }  />
               <PrivateRoute exact path="/decks" component={ Decks }  />
 
              {/* END MY VIEWS */}
